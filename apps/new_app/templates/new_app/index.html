@@ -1,0 +1,81 @@
+  
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="Total Glass Effects" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="google-site-verification" content="5pWjuXFTCV_PHr0mnFd9KgN2-KxWjXrLs7q1hI3IcUQ" /> -->
+        <title> Real Estate - Home </title>
+        <meta description="Window repair and replacement, for home and business.">
+        <meta keywords="Total Glass Effects Glass repair window new windows home and business repair broken window custom glass custom shower custom railings skylights vancouver BC lower mainland glass order glass cutting">
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'new_app/css/index.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width">
+        <!-- FONTLINKS -->
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'new_app/images/apple-touch-icon.png' %}"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'new_app/images/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'new_app/images/favicon-16x16.png' %}">
+        <link rel="manifest" href="/site.webmanifest">
+    
+       
+    </head>
+ 
+    <body>
+        <div class="section">  
+          <div class="overlay">     
+            <h1 class="title">Real Estate Application.</h1>
+     
+          </div> 
+          <br>
+            <br>
+          <a href="/projects" class="btn sticky btn-dark"><img class="svg"  src="{% static 'new_app/images/camera-back.svg' %}"> webspacestudio</a>  
+        </div>
+        <div class="">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <a class="navbar-brand"  href="{% url 'real_estate:houseindex' %}"><img class="svg" align="bottom" src="{% static 'new_app/images/home.svg'%}" height="20px" width="20px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{% url 'real_estate:houseindex' %}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="{% url 'real_estate:houselistings' %}">All Listings</a>
+                    <a class="nav-item nav-link" href="#">Location</a>
+                    <a class="nav-item nav-link disabled" href="#">Contact</a>
+                  </div>
+                </div>
+              </nav>
+            <div class="content">
+              <h2>Vancouver Island, BC Real Estate</h2>
+              <br>
+              <br>
+              <div class="dropdown show">
+                <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Choose Listing By Location
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  {% for loc in l_links %}
+                  <a class="dropdown-item" href="{{loc.get_url}}">{{loc.name}}</a>
+                  {% endfor %}
+                </div>
+              </div>
+              <br>
+              <br>
+                
+            </div>
+            
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"></link>
+        <script type="text/javascript" src="{% static 'new_app/js/script.js' %}"></script>
+    </body>
+    </html>
